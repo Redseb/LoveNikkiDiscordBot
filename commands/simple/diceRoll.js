@@ -6,12 +6,19 @@ class diceRollCommand extends COMMANDO.Command{
             name: 'roll',
             group: 'simple',
             memberName: 'roll',
-            description: 'Rolls a six sided dice'
+            description: 'Rolls a n sided dice, user must specify number of sides (!roll 6)',
+            args: [
+                {
+                    key: 'sides',
+                    prompt: 'How many sides should the dice have?',
+                    type: 'integer'
+                }
+            ]
         })
     }
 
-    async run(message, args){
-        var diceRoll = Math.floor(Math.random() * 6) + 1;
+    async run(message, {sides}){
+        var diceRoll = Math.floor(Math.random() * sides) + 1;
         message.channel.sendMessage("*Rolling* \n " + message.author + " Your dice landed on:" + diceRoll);
     }
 }
