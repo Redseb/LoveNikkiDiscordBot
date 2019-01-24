@@ -22,7 +22,7 @@ class lnEventCommand extends COMMANDO.Command{
           var latestEvent = $('.collapsible-header').last().text(); //Search for event name using cheerio
           latestEvent = latestEvent.substring(15, latestEvent.length); //Get rid of "import_contacts" string
 
-          message.reply("The newest event is: " + latestEvent); //Send out message
+          message.reply("The latest event is: " + latestEvent); //Send out message
           message.channel.sendMessage(url);
         })
         .catch(function(err) {
