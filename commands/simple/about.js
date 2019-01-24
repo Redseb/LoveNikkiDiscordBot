@@ -11,9 +11,12 @@ class aboutCommand extends COMMANDO.Command{
     }
 
     async run(message){
-        var aboutMe = `Hi! I'm a Discord Bot tailor made for Love Nikki communities :D My creator is Miko Zyzanski. \n 
-        To see my available commands enter !help \n \n
+        var aboutMe = `LoveNikkiDiscordBot V1.0
+        
+        Hi! I'm a Discord Bot tailor made for Love Nikki communities :D My creator is Miko Zyzanski.
+        To see my available commands enter !help
         If you're interested in contributing to this project here is the Github Repo: https://github.com/Redseb/LoveNikkiDiscordBot 
+        Please consider starring this repo :)
         `;
 
 
