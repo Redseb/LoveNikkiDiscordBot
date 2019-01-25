@@ -15,10 +15,10 @@ class aboutCommand extends COMMANDO.Command{
         message.channel.send({embed: {
             color: 0xFF75D5,
             author: {
-              name: client.user.username,
+              name: "MomoBot V1.0",
               icon_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30689223_1735998249823727_1293516133759975424_n.jpg?_nc_cat=108&_nc_ht=scontent-amt2-1.xx&oh=3e30c7463f664ffa5845e870abd84f52&oe=5CC9788D"
             },
-            title: "Momo Bot V1.0",
+            title: "FAQ",
             url: "https://github.com/Redseb/LoveNikkiDiscordBot",
             description: "I'm a Discord Bot designed for Love Nikki communities",
             fields: [{
