@@ -12,6 +12,8 @@
     "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
+    "ffmpeg": "0.0.4",
+    "opusscript": "0.0.6",
     "puppeteer": "^1.11.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
