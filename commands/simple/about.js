@@ -16,28 +16,27 @@ class aboutCommand extends COMMANDO.Command{
             color: 0xFF75D5,
             author: {
               name: client.user.username,
-              icon_url: client.user.avatarURL
+              icon_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30689223_1735998249823727_1293516133759975424_n.jpg?_nc_cat=108&_nc_ht=scontent-amt2-1.xx&oh=3e30c7463f664ffa5845e870abd84f52&oe=5CC9788D"
             },
-            title: "This is an embed",
-            url: "http://google.com",
-            description: "This is a test embed to showcase what they look like and what they can do.",
+            title: "Momo Bot V1.0",
+            url: "https://github.com/Redseb/LoveNikkiDiscordBot",
+            description: "I'm a Discord Bot designed for Love Nikki communities",
             fields: [{
-                name: "Fields",
-                value: "They can have different fields with small headlines."
+                name: "What can I do?",
+                value: "Enter the !help command to see all of my commands"
               },
               {
-                name: "Masked links",
-                value: "You can put [masked links](http://google.com) inside of rich embeds."
+                name: "How can I request a new feature?",
+                value: "You can send an email to mikolajzyzanski@gmail.com to request a new feature for the bot!"
               },
               {
-                name: "Markdown",
-                value: "You can put all the *usual* **__Markdown__** inside of them."
+                name: "How can I contribute to this project?",
+                value: "You can contribute to this project at https://github.com/Redseb/LoveNikkiDiscordBot and by starring the repo"
               }
             ],
             timestamp: new Date(),
             footer: {
-              icon_url: client.user.avatarURL,
-              text: "© Example"
+              text: "Love, Mikołaj Zyzański"
             }
           }
         });
