@@ -6,7 +6,6 @@ const TOKEN = process.env.token; //Hidden token on Heroku
 BOT.registry.registerGroup('simple', 'Simple');
 BOT.registry.registerGroup('lovenikki', 'LoveNikki');
 BOT.registry.registerGroup('webscrape', 'WebScrape');
-BOT.registry.registerGroup('music', 'Music');
 BOT.registry.registerDefaults();
 BOT.registry.registerCommandsIn(__dirname + "/commands");
 
