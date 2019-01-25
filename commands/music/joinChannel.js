@@ -1,4 +1,6 @@
 const COMMANDO = require("discord.js-commando");
+const ffmpeg = require(ffmpeg);
+const opusscript = require(opusscript);
 
 class joinChannelCommand extends COMMANDO.Command{
     constructor(client){
