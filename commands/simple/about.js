@@ -12,7 +12,7 @@ class aboutCommand extends COMMANDO.Command{
     }
 
     async run(message){
-        var myInfo = DISCORD.RichEmbed()
+        var myInfo = new DISCORD.RichEmbed()
         .setTitle("Momo Bot V1.0")
         .setAuthor("Mikołaj Zyzański", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30689223_1735998249823727_1293516133759975424_n.jpg?_nc_cat=108&_nc_ht=scontent-amt2-1.xx&oh=3e30c7463f664ffa5845e870abd84f52&oe=5CC9788D")
         /*
