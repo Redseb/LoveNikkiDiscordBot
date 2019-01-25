@@ -18,7 +18,7 @@ class aboutCommand extends COMMANDO.Command{
         /*
         * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
         */
-        .setColor(#FF75D5)
+        .setColor([255,117,213])
         .setDescription("Hi! I'm a Discord Bot tailor made for Love Nikki communities :D")
         .setFooter("If you're interested in contributing to this project here is the Github Repo: https://github.com/Redseb/LoveNikkiDiscordBot Please consider starring this repo :)")
         .setImage("http://i.imgur.com/yVpymuV.png")
