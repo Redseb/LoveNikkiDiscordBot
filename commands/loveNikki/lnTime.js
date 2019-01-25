@@ -14,7 +14,7 @@ class lnTimeCommand extends COMMANDO.Command{
 
     async run(message, args){
         
-        var lnTime = new Date().toLocaleTimeString("en-GB", {timeZone: "Etc/GMT+8"}); //Display in british style UTC-8/GMT+8 time
+        var lnTime = new Date().toLocaleTimeString("en-GB", {timeZone: "America/Anchorage"}); //Display in british style UTC-8/GMT+8 time
 
         message.reply("Love Nikki Server Time: " + lnTime);
     }
