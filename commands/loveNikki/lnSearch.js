@@ -96,8 +96,6 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemAttributes;
             var itemTags;
 
-            var itemAttributesArray;
-
                 rp(categoryUrl + itemNumber)
                 .then(function(html) {
                     const specificPage = cheerio.load(html);
@@ -109,18 +107,12 @@ class lnSearchCommand extends COMMANDO.Command{
                     console.log(itemAttributes);
                     console.log(itemTags);
 
-                    itemAttributes.split(' '); //splits attributes into an array
+                    // itemAttributes.split(' '); //splits attributes into an array
 
-                    for(var i = 0; i < itemAttributes.length; i++){
-                        console.log(i + ":" + itemAttributes[i]);
-                    }
+                    // for(var i = 0; i < itemAttributes.length; i++){
+                    //     console.log(i + ":" + itemAttributes[i]);
+                    // }
 
-                    specificPage('span.cloth-grade').each(function(i, elem) {
-                        itemAttributesArray[i] = $(this).text();
-                      });
-
-                    itemAttributesArray.join(', ');
-                    console.log(itemAttributesArray);
 
                     message.channel.send({embed: {
                         color: 0xFF75D5,
@@ -133,6 +125,12 @@ class lnSearchCommand extends COMMANDO.Command{
                         fields: [{
                             name: "Item Number",
                             value: itemNumber
+                          }, {
+                              name: "Attributes",
+                              value: itemAttributes
+                          }, {
+                              name: "Tags",
+                              value: itemTags
                           }
                         ],
                         timestamp: new Date(),
