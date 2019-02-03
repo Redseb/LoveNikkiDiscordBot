@@ -128,20 +128,22 @@ class lnSearchCommand extends COMMANDO.Command{
 
             /* For suits */
 
-            } else if(category != null && category == "suit"){
-                rp(categoryUrl)
-                .then(function(html) {
-                const $ = cheerio.load(html);
-                var item = $('a.title.truncate').text();
+            } 
+            // else if(category != null && category == "suit"){
+            //     rp(categoryUrl)
+            //     .then(function(html) {
+            //     const $ = cheerio.load(html);
+            //     var item = $('a.title.truncate').text();
 
-                message.channel.sendMessage(item);
-                });
-                .catch(function(err) {
-                //handle error
-                });
+            //     message.channel.sendMessage(item);
+            //     });
+            //     .catch(function(err) {
+            //     //handle error
+            //     });
 
-            /* Invalid category */
-            } else {
+            // /* Invalid category */
+            // } 
+            else {
                 console.log("Invalid Category Name");
             }
         }
