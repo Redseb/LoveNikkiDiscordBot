@@ -107,6 +107,12 @@ class lnSearchCommand extends COMMANDO.Command{
                     console.log(itemAttributes);
                     console.log(itemTags);
 
+                    itemAttributes.split(' '); //splits attributes into an array
+
+                    for(var i = 0; i < itemAttributes.length; i++){
+                        console.log(i + ":" + itemAttributes[i]);
+                    }
+
                     message.channel.send({embed: {
                         color: 0xFF75D5,
                         title: item.text(),
