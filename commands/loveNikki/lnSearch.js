@@ -104,19 +104,17 @@ class lnSearchCommand extends COMMANDO.Command{
                     itemDescription = specificPage('p.flow-text').first().text(); //Description of item
                     itemAttributesGrade = specificPage('span.cloth-grade').text(); //Rank of attribute (A+)
                     itemAttributes = specificPage('span.cloth-attr').text(); //Attribute name (Cute)
-                    itemTags = specificPage('a.chip').text(); //Tags
+                    //itemTags = specificPage('a.chip').text(); //Tags
 
-                    console.log(itemDescription);
-                    console.log(itemAttributesGrade);
-                    console.log(itemAttributes);
-                    console.log(itemTags);
+                    SpecificPage('a.chip').each(function(i, elem) {
+                        itemTags[i] = specificPage(this).text();
+                      });
+                      
+                      itemTags.join(', ');
 
                     itemAttributesGrade = itemAttributesGrade.split("\n");
                     itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
 
-                     for(var i = 0; i < itemAttributes.length; i++){
-                         console.log(itemAttributes[i] + ": " + itemAttributesGrade[i]);
-                     }
 
 
                     message.channel.send({embed: {
