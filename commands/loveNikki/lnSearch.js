@@ -93,6 +93,8 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemImage = "https://ln.nikkis.info/preview/" + category + itemNumber + ".jpg"
 
             var itemDescription;
+            var itemAttributes;
+            var itemTags;
 
                 rp(categoryUrl + itemNumber)
                 .then(function(html) {
