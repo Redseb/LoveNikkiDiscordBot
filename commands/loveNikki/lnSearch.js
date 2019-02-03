@@ -99,7 +99,7 @@ class lnSearchCommand extends COMMANDO.Command{
 
                 rp(categoryUrl + itemNumber)
                 .then(function(html) {
-                    const spePage = cheerio.load(html);
+                    const specificPage = cheerio.load(html);
 
                     itemDescription = specificPage('p.flow-text').first().text(); //Description of item
                     itemAttributesGrade = specificPage('span.cloth-grade').text(); //Rank of attribute (A+)
