@@ -64,6 +64,9 @@ class lnSearchCommand extends COMMANDO.Command{
             case "soul":
               categoryUrl = "https://ln.nikkis.info/wardrobe/soul/";
               break;
+            case "suit":
+              categoryUrl = "https://ln.nikkis.info/wardrobe/suit/";
+              break;
             default:
               categoryUrl = null;
               break;
