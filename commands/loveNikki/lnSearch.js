@@ -107,7 +107,7 @@ class lnSearchCommand extends COMMANDO.Command{
                     console.log(itemAttributes);
                     console.log(itemTags);
 
-                    itemAttributes.split('\n'); //splits attributes into an array
+                    itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
 
                      for(var i = 0; i < itemAttributes.length; i++){
                          console.log(i + ":" + itemAttributes[i]);
