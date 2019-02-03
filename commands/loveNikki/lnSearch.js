@@ -108,6 +108,8 @@ class lnSearchCommand extends COMMANDO.Command{
                     itemAttributesGrade = itemAttributesGrade.split("\n");
                     itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
 
+                    var itemAttributesValues = itemAttributes[0] + ": " + itemAttributesGrade[0] + "\n" + itemAttributes[1] + ": " + itemAttributesGrade[1] + "\n" + itemAttributes[2] + ": " + itemAttributesGrade[2] + "\n" + itemAttributes[3] + ": " + itemAttributesGrade[3] + "\n" + itemAttributes[4] + ": " + itemAttributesGrade[4] + "\n";
+
 
 
                     message.channel.send({embed: {
@@ -122,23 +124,8 @@ class lnSearchCommand extends COMMANDO.Command{
                             name: "Item Number",
                             value: itemNumber
                           }, {
-                              name: itemAttributes[0],
-                              value: itemAttributesGrade[0]
-                          },{
-                              name: itemAttributes[1],
-                              value: itemAttributesGrade[1]
-                          },{
-                              name: itemAttributes[2],
-                              value: itemAttributesGrade[2]
-                          },{
-                              name: itemAttributes[3],
-                              value: itemAttributesGrade[3]
-                          },{
-                              name: itemAttributes[4],
-                              value: itemAttributesGrade[4]
-                          }, {
                               name: "Attributes",
-                              value: itemAttributes[0] + ": " + itemAttributesGrade[0] + "\n" + itemAttributes[1] + ": " + itemAttributesGrade[1] + "\n" + itemAttributes[2] + ": " + itemAttributesGrade[2] + "\n" + itemAttributes[3] + ": " + itemAttributesGrade[3] + "\n" + itemAttributes[4] + ": " + itemAttributesGrade[4] + "\n"
+                              value: itemAttributesValues
                           }, {
                               name: "Tags",
                               value: itemTags
