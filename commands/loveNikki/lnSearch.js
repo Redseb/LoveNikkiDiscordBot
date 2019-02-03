@@ -99,7 +99,11 @@ class lnSearchCommand extends COMMANDO.Command{
                     const specificPage = cheerio.load(html);
 
                     itemDescription = specificPage('p.flow-text').first().text();
+                    itemAttributes = specificPage('span.cloth-grade').text();
+                    itemTags = specificPage('a.chip').text();
                     console.log(itemDescription);
+                    console.log(itemAttributes);
+                    console.log(itemTags);
 
                     message.channel.send({embed: {
                         color: 0xFF75D5,
@@ -129,7 +133,7 @@ class lnSearchCommand extends COMMANDO.Command{
             /* For suits */
 
             } 
-            // else if(category != null && category == "suit"){
+            else if(category != null && category == "suit"){
             //     rp(categoryUrl)
             //     .then(function(html) {
             //     const $ = cheerio.load(html);
@@ -141,8 +145,10 @@ class lnSearchCommand extends COMMANDO.Command{
             //     //handle error
             //     });
 
+            message.channel.sendMessage("I am currently working on the ability to search through suits, thank you for understanding");
+
             // /* Invalid category */
-            // } 
+            } 
             else {
                 console.log("Invalid Category Name");
             }
