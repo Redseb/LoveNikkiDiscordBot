@@ -126,9 +126,6 @@ class lnSearchCommand extends COMMANDO.Command{
                           }, {
                               name: "Attributes",
                               value: itemAttributesValues
-                          }, {
-                              name: "Tags",
-                              value: itemTags
                           }
                         ],
                         timestamp: new Date(),
