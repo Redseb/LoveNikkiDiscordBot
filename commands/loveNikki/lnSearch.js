@@ -106,7 +106,7 @@ class lnSearchCommand extends COMMANDO.Command{
                     itemAttributes = specificPage('span.cloth-attr').text(); //Attribute name (Cute)
                     //itemTags = specificPage('a.chip').text(); //Tags
 
-                    SpecificPage('a.chip').each(function(i, elem) {
+                    specificPage('a.chip').each(function(i, elem) {
                         itemTags[i] = specificPage(this).text();
                       });
                       
@@ -143,6 +143,9 @@ class lnSearchCommand extends COMMANDO.Command{
                           },{
                               name: itemAttributes[4],
                               value: itemAttributesGrade[4]
+                          }, {
+                              name: "Attributes",
+                              value: itemAttributes[0] + ": " + itemAttributesGrade[0] + "\n" + itemAttributes[1] + ": " + itemAttributesGrade[1] + "\n" + itemAttributes[2] + ": " + itemAttributesGrade[2] + "\n" + itemAttributes[3] + ": " + itemAttributesGrade[3] + "\n" + itemAttributes[4] + ": " + itemAttributesGrade[4] + "\n"
                           }, {
                               name: "Tags",
                               value: itemTags
