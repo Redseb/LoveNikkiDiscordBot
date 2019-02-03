@@ -95,6 +95,7 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemDescription;
             var itemAttributesGrade;
             var itemAttributes;
+            var itemRarity;
 
 
                 rp(categoryUrl + itemNumber)
@@ -104,6 +105,7 @@ class lnSearchCommand extends COMMANDO.Command{
                     itemDescription = specificPage('p.flow-text').first().text(); //Description of item
                     itemAttributesGrade = specificPage('span.cloth-grade').text(); //Rank of attribute (A+)
                     itemAttributes = specificPage('span.cloth-attr').text(); //Attribute name (Cute)
+                    itemRarity = specificPage('span.grey-text').text();
 
                     itemAttributesGrade = itemAttributesGrade.split("\n");
                     itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
@@ -126,6 +128,9 @@ class lnSearchCommand extends COMMANDO.Command{
                           }, {
                               name: "Attributes",
                               value: itemAttributesValues
+                          }, {
+                              name: "Rarity",
+                              value: itemRarity
                           }
                         ],
                         timestamp: new Date(),
