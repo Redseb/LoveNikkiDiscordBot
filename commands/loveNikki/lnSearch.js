@@ -95,22 +95,15 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemDescription;
             var itemAttributesGrade;
             var itemAttributes;
-            const itemTags = [];
+
 
                 rp(categoryUrl + itemNumber)
                 .then(function(html) {
-                    const specificPage = cheerio.load(html);
+                    const spePage = cheerio.load(html);
 
                     itemDescription = specificPage('p.flow-text').first().text(); //Description of item
                     itemAttributesGrade = specificPage('span.cloth-grade').text(); //Rank of attribute (A+)
                     itemAttributes = specificPage('span.cloth-attr').text(); //Attribute name (Cute)
-                    //itemTags = specificPage('a.chip').text(); //Tags
-
-                    specificPage('a.chip').each(function(i, elem) {
-                        itemTags[i] = specificPage(this).text();
-                      });
-                      
-                      itemTags.join(', ');
 
                     itemAttributesGrade = itemAttributesGrade.split("\n");
                     itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
