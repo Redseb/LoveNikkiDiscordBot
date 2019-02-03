@@ -95,7 +95,7 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemDescription;
             var itemAttributesGrade;
             var itemAttributes;
-            var itemTags;
+            const itemTags = [];
 
                 rp(categoryUrl + itemNumber)
                 .then(function(html) {
