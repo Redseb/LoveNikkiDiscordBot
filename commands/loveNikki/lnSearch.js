@@ -65,7 +65,8 @@ class lnSearchCommand extends COMMANDO.Command{
               categoryUrl = "https://ln.nikkis.info/wardrobe/soul/";
               break;
             case "suit":
-              categoryUrl = "https://ln.nikkis.info/wardrobe/suit/";
+              categoryUrl = "https://ln.nikkis.info/wardrobe/suit/" + spaceToDash(itemName);
+              console.log(categoryUrl);
               break;
             default:
               categoryUrl = null;
@@ -73,7 +74,9 @@ class lnSearchCommand extends COMMANDO.Command{
         }
 
 
-        if(categoryUrl != null){
+        /* Every category but suits */
+
+        if(categoryUrl != null && category != "suit"){
         
             rp(categoryUrl)
             .then(function(html) {
@@ -123,7 +126,21 @@ class lnSearchCommand extends COMMANDO.Command{
             //handle error
             });
 
+            /* For suits */
 
+            } else if(category != null && category == "suit"){
+                rp(categoryUrl)
+                .then(function(html) {
+                const $ = cheerio.load(html);
+                var item = $('a.title.truncate').text();
+
+                message.channel.sendMessage(item);
+                });
+                .catch(function(err) {
+                //handle error
+                });
+
+            /* Invalid category */
             } else {
                 console.log("Invalid Category Name");
             }
@@ -138,6 +155,10 @@ function titleCase(str) { //Capitalize first letter of each word
     }
     // Directly return the joined string
     return splitStr.join(' '); 
+ }
+
+ function spaceToDash(str) { //Replace all spaces with dashes (-)
+    return str.replace(/\s+/g, '-').toLowerCase();
  }
 
 module.exports = lnSearchCommand;
