@@ -93,6 +93,7 @@ class lnSearchCommand extends COMMANDO.Command{
             var itemImage = "https://ln.nikkis.info/preview/" + category + itemNumber + ".jpg"
 
             var itemDescription;
+            var itemAttributesGrade;
             var itemAttributes;
             var itemTags;
 
@@ -100,17 +101,21 @@ class lnSearchCommand extends COMMANDO.Command{
                 .then(function(html) {
                     const specificPage = cheerio.load(html);
 
-                    itemDescription = specificPage('p.flow-text').first().text();
-                    itemAttributes = specificPage('span.cloth-grade').text();
-                    itemTags = specificPage('a.chip').text();
+                    itemDescription = specificPage('p.flow-text').first().text(); //Description of item
+                    itemAttributesGrade = specificPage('span.cloth-grade').text(); //Rank of attribute (A+)
+                    itemAttributes = specificPage('span.cloth-attr').text(); //Attribute name (Cute)
+                    itemTags = specificPage('a.chip').text(); //Tags
+
                     console.log(itemDescription);
+                    console.log(itemAttributesGrade);
                     console.log(itemAttributes);
                     console.log(itemTags);
 
+                    itemAttributesGrade = itemAttributesGrade.split("\n");
                     itemAttributes = itemAttributes.split("\n"); //splits attributes into an array
 
                      for(var i = 0; i < itemAttributes.length; i++){
-                         console.log(i + ":" + itemAttributes[i]);
+                         console.log(itemAttributes[i] + ": " + itemAttributesGrade[i]);
                      }
 
 
@@ -126,8 +131,20 @@ class lnSearchCommand extends COMMANDO.Command{
                             name: "Item Number",
                             value: itemNumber
                           }, {
-                              name: "Attributes",
-                              value: itemAttributes
+                              name: itemAttributes[0],
+                              value: itemAttributesGrade[0]
+                          },{
+                              name: itemAttributes[1],
+                              value: itemAttributesGrade[1]
+                          },{
+                              name: itemAttributes[2],
+                              value: itemAttributesGrade[2]
+                          },{
+                              name: itemAttributes[3],
+                              value: itemAttributesGrade[3]
+                          },{
+                              name: itemAttributes[4],
+                              value: itemAttributesGrade[4]
                           }, {
                               name: "Tags",
                               value: itemTags
